@@ -29,13 +29,11 @@ public class BikeMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Vector3 zVector = new Vector3(0.0f, 0.0f, 1.0f);
-            rb.AddTorque(zVector * rotationSpeed * Time.deltaTime);
+            transform.eulerAngles += new Vector3(0, 0, rotationSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            Vector3 zVector = new Vector3(0.0f, 0.0f, -1.0f);
-            rb.AddTorque(zVector * rotationSpeed * Time.deltaTime);
+            transform.eulerAngles -= new Vector3(0, 0, rotationSpeed * Time.deltaTime);
         }
         rb.velocity *= 0.9f;
     }
