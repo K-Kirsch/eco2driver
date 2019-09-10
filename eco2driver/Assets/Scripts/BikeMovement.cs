@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarMovement : MonoBehaviour
+public class BikeMovement : MonoBehaviour
 {
     public float speed = 100.0f;
     public float rotationSpeed = 100.0f;
@@ -17,22 +17,22 @@ public class CarMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             Vector3 v = gameObject.transform.up;
             rb.AddForce(v * Time.deltaTime * speed, ForceMode.VelocityChange);
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             Vector3 v = gameObject.transform.up;
             rb.AddForce(-v * Time.deltaTime * speed, ForceMode.VelocityChange);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             Vector3 zVector = new Vector3(0.0f, 0.0f, 1.0f);
             rb.AddTorque(zVector * rotationSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             Vector3 zVector = new Vector3(0.0f, 0.0f, -1.0f);
             rb.AddTorque(zVector * rotationSpeed * Time.deltaTime);
